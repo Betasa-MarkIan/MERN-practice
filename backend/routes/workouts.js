@@ -10,19 +10,19 @@ const {
 } = require('../controllers/workoutController')
 
 // GET all workouts
-router.get('/', getWorkout)
+router.get('/', getWorkouts)
 
 // GET single workout
-router.get('/:id', getWorkouts)
+router.get('/:id', getWorkout)
 
 // POST new workout
 router.post('/post', createWorkout)
 
 // DELETE a workout
-router.delete('/delete', deleteWorkout)
+router.delete('/delete/:id', deleteWorkout)
 
 // UPDATE a workout
-router.patch('/patch', patchWorkout)
+router.patch('/update/:id', patchWorkout)
 
 
 module.exports = router

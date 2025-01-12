@@ -1,8 +1,5 @@
 const Workout = require('../models/workoutModels')
-
-// createWorkout,
-// deleteWorkout,
-// patchWorkout
+const mongoose = require('mongoose')
 
 // GET all workouts
 const getWorkouts = async (req, res) => {
@@ -10,7 +7,7 @@ const getWorkouts = async (req, res) => {
     const workout = await Workout.find({}).sort({createdAt: -1})
     res.status(200).json(workout)
   } catch (error){
-    res.status(400).json({error: error.message})
+    return res.status(400).json({error: error.message})
   }
 }
 
@@ -28,21 +25,12 @@ const getWorkout = async (req, res) => {
     const workout = await Workout.findById(id)
 
     if (!workout) {
-      return (
-        res.status(404).json({error: 'No such workout found'})
-    )} else {
-        return (
-          res.status(200).json(workout)
-        )}
+      return res.status(404).json({error: 'No such workout found'})
+    } else {
+        return res.status(200).json(workout)
+      }
   } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-  
-  try {
-    const workout = await Workout.find({}).sort({createdAt: -1})
-    res.status(200).json(workout)
-  } catch (error){
-    res.status(400).json({error: error.message})
+    return res.status(500).json({ error: error.message });
   }
 }
 
@@ -55,7 +43,7 @@ const createWorkout = async (req, res) => {
     const workout = await Workout.create({title, load, reps})
     res.status(200).json(workout)
   } catch (error){
-    res.status(400).json({error: error.message})
+    return res.status(400).json({error: error.message})
   }
 }
 
@@ -64,28 +52,20 @@ const deleteWorkout = async (req, res) => {
   const { id } = req.params
 
   try {
-    if (!mongoose.Type.ObjectId.isValid(id)) {
-      return (
-        res.status(404).json({error: 'No such id fouworkout found with this id'})
-      )
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(404).json({error: 'No such workout found with this id'})
     }
 
-    const workout =  await Workout.findByIDAndDelete(id)
+    const workout =  await Workout.findOneAndDelete({_id: id})
 
     if(!workout) {
-      result (
-        res.status(404).json({error: 'No such workout found'})
-      )
+      return res.status(404).json({error: 'No such workout found'})
     } else {
-      result(
-        res.status(200).json({message: 'Workout deleted successfully', workout})
-      )
+      return res.status(200).json({message: 'Workout deleted successfully', workout})
     }
 
   } catch (error){
-    result (
-      res.status(404).json({error: error.message})
-    )
+    return res.status(404).json({error: error.message})
   }
 }
 
@@ -95,34 +75,28 @@ const patchWorkout = async (req, res) => {
   const { title, load, reps } = req.body
 
   try {
-    if (!mongoose.Type.ObjectId.isValid(id)) {
-      return (
-        res.status(404).json({error: 'No such id fouworkout found with this id'})
-      )
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(404).json({error: 'No such workout found with this id'})
     }
 
-    const workout =  await Workout.findByIDAndUpdate(
-      id, 
-      { title, load, reps }, //fields to update
+    const workout =  await Workout.findOneAndUpdate(
+      { _id: id}, 
+      { ...req.body }, //fields to update
       { new: true } //return the new values
     )
 
     if(!workout) {
-      result (
-        res.status(404).json({error: 'No such workout found'})
-      )
+      return res.status(404).json({error: 'No such workout found'})
     } else {
-      result(
-        res.status(200).json({message: 'Workout updated successfully', workout})
-      )
+      return res.status(200).json({message: 'Workout updated successfully', workout})
     }
 
   } catch (error){
-    result (
-      res.status(404).json({error: error.message})
-    )
+    return res.status(404).json({error: error.message})
   }
 }
+
+//other functions will be added later
 
 module.exports = {
   createWorkout,
