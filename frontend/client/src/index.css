@@ -1,8 +1,17 @@
 body {
   font-family: 'Body-Font', sans-serif;
   background-color: #E8E9EB;
+  position: relative;
+  min-height: 100vh;
   margin: 0px;
+  padding-bottom: 500px; 
+  /* long bottom padding */
 }
+:root {
+  --primary: #6699CC;
+  --error: #e7195a;
+}
+
 
 @font-face {
   font-family: 'Custom-Font';

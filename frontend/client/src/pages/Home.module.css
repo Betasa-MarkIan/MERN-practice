@@ -1,0 +1,34 @@
+.homepage {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.homepage-left-section, .homepage-right-section {
+  border: 1px solid black;
+  display: flex;
+}
+.homepage-left-section {
+  display: flex;
+  flex: 2;
+  
+}
+.homepage-right-section {
+  flex: 1;
+  
+}
+.homepage-left-subsection {
+  border: 1px solid black;
+  flex: 2;
+  justify-content: start;
+  align-items: center;
+  line-height: 10px;
+}
+.homepage-right-subsection {
+  border: 1px solid black;
+  flex: 1;
+}

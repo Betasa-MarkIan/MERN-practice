@@ -3,6 +3,7 @@
 const express = require('express')
 const uri = process.env.MONGO_URI;
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 require('dotenv').config()
 
@@ -12,6 +13,7 @@ const workoutRoutes = require('./routes/workouts')
 
 //global middleware
 app.use(express.json())
+app.use(cors({origin: 'http://localhost:5173'}))
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
@@ -26,7 +28,7 @@ mongoose.connect(process.env.MONGO_URI)
     // listen for request
     app.listen(process.env.PORT, () => { 
     console.log('connected to db...')
-    console.log('listening on port 5000')
+    console.log('listening on port 4000')
    })
   })
   .catch((error) => {

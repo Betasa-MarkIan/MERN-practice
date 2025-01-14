@@ -37,6 +37,7 @@
 }
 .sub-headings-section {
   border: 1px solid red;
+  height: 2em;
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -63,7 +64,8 @@
   transform: scaleY(1.3);
   position: relative;
   overflow: hidden;
-  transition: color 0.7s ease, font-size 0.7s ease, ;
+  transition: color 0.8s ease, font-size 0.8s ease transform 0.8s ease;
+  border: 1px solid black;
 }
 .home-subheading::after, .exercise-subheading::after, .workout-plans-subheading::after {
   content: '';
@@ -73,7 +75,7 @@
   width: 0;
   height: 0.5px;
   background-color: black;
-  transition: width 0.7s ease;
+  transition: width 0.8s ease;
 }
 .home-subheading:hover::after, .exercise-subheading:hover::after, .workout-plans-subheading:hover::after {
   width: 100%;
@@ -81,6 +83,7 @@
 .home-subheading:hover, .exercise-subheading:hover, .workout-plans-subheading:hover {
   cursor: pointer;
   font-size: 28px;
+  transform: scaleY(1.3);
   color: hsl(0, 0%, 55%);
 }
 .home-subheading:active, .exercise-subheading:active, .workout-plans-subheading:active {
