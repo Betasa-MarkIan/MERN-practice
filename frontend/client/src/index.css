@@ -8,8 +8,11 @@ body {
   /* long bottom padding */
 }
 :root {
-  --primary: #6699CC;
+  --primary: #1aac83;
   --error: #e7195a;
+}
+a {
+  all: unset;
 }
 
 

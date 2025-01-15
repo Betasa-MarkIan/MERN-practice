@@ -24,16 +24,10 @@ function Home() {
     <>
     <div className={style['homepage']}>
       <div className={style['homepage-left-section']}>
-        <div className={style['homepage-left-subsection']}>
+        
         {workouts && workouts.map((workout) => (
           <WorkoutDetails key={workout._id} workout={workout} />
         ))}
-        </div>
-
-        <div className={style['homepage-right-subsection']}>
-
-
-        </div>
         
       </div>
 

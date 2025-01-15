@@ -11,24 +11,50 @@
 .homepage-left-section, .homepage-right-section {
   border: 1px solid black;
   display: flex;
+  flex-direction: column;
 }
 .homepage-left-section {
-  display: flex;
   flex: 2;
-  
 }
 .homepage-right-section {
   flex: 1;
   
 }
-.homepage-left-subsection {
+/* .homepage-left-subsection {
   border: 1px solid black;
-  flex: 2;
-  justify-content: start;
-  align-items: center;
-  line-height: 10px;
+  flex: 3;
 }
 .homepage-right-subsection {
   border: 1px solid black;
   flex: 1;
+} */
+
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
+.workout-details h4 {
+  margin: 0 0 20px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.workout-details p {
+  margin: 5px 0 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+/* .workout-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+} */
+
