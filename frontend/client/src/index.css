@@ -9,6 +9,7 @@ body {
 }
 :root {
   --primary: #1aac83;
+  --secondary: #2896bd;
   --error: #e7195a;
 }
 a {

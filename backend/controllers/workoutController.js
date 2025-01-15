@@ -34,7 +34,6 @@ const getWorkout = async (req, res) => {
   }
 }
 
-//GET workout for exercise 
 
 // POST new workout
 const createWorkout = async (req, res) => {

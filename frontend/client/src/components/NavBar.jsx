@@ -20,7 +20,6 @@ function Header () {
         <div className={style['exercise-subheading']}>
           <p className={style['drop-text']}>Exercise List</p>
           <div className={style['dropdown-content']}>
-            <Link to="#" className='#'>Neck</Link>
             <Link to="#" className='#'>Shoulder</Link>
             <Link to="#" className='#'>Chest</Link>
             <Link to="#" className='#'>Back/Wing</Link>

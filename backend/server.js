@@ -10,6 +10,7 @@ require('dotenv').config()
 // express app - instance of express app
 const app = express()
 const workoutRoutes = require('./routes/workouts')
+const exerciseRoutes = require('./routes/exercise')
 
 //global middleware
 app.use(express.json())
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/workouts', workoutRoutes)
+app.use('/api/exercise-list', exerciseRoutes)
 
 // Connect to db - async 
 mongoose.connect(process.env.MONGO_URI)

@@ -105,7 +105,8 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: var(--primary);
+  color: white;
 }
 
 /* The .exercise-subheading styles */

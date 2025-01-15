@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react'
 import WorkoutDetails from '../components/WorkoutDetails.jsx'
+import WorkoutForm from '../components/WorkoutForm.jsx'
 import style from './Home.module.css'
 
 function Home() {
@@ -24,15 +25,18 @@ function Home() {
     <>
     <div className={style['homepage']}>
       <div className={style['homepage-left-section']}>
-        
-        {workouts && workouts.map((workout) => (
-          <WorkoutDetails key={workout._id} workout={workout} />
-        ))}
-        
+
+      {workouts && workouts.length > 0 ? (
+          workouts.map((workout) => (
+            <WorkoutDetails key={workout._id} workout={workout} />
+          ))
+        ) : (
+          <p className={style['no-workout-mssg']}>No workouts added yet</p>
+        )}
       </div>
 
       <div className={style['homepage-right-section']}>
-        right page section
+        <WorkoutForm />
       </div>
       
     </div>
