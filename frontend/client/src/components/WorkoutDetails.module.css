@@ -1,0 +1,46 @@
+
+.workout-container {
+  display: flex;
+
+}
+.workout-container {
+  background: #fff;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.workout-container h4 {
+  margin: 0 0 20px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.workout-container p {
+  margin: 5px 0 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.workout-details {
+  flex: 3;
+}
+.function-icons {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+.edit-icon, .delete-icon {
+  font-size: 20px;
+  color: #808080;
+  padding: 6px;
+  border-radius: 16px;
+  background-color: #eeeeee;
+}
+.edit-icon:hover, .delete-icon:hover {
+  color: white;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.edit-icon {
+  margin-right: 8px;
+}

@@ -1,13 +1,12 @@
 import style from './WorkoutForm.module.css'
 import { useState } from 'react'
 
-function WorkoutForm() {
+function WorkoutForm({ workouts, setWorkouts }) {
 
   const [title, setTitle]  = useState('')
   const [load, setLoad]   = useState('')
   const [reps, setReps] = useState('')
   const [error, setError] = useState(null)
- // const [workouts, setWorkouts] = useState('')
 
   // const fetchWorkout = async () => {
   //   const response = await fetch('http://localhost:4000/api/workouts')
@@ -17,6 +16,7 @@ function WorkoutForm() {
   //     setWorkouts(json)
   //   }
   // }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -30,18 +30,18 @@ function WorkoutForm() {
       }
     })
 
-    const json = await response.json()
+    const addedWorkout = await response.json()
 
     if(!response.ok) {
-      setError(json.error)
+      setError(addedWorkout.error)
     }
     if(response.ok) {
       setError(null)
       setTitle('')
       setLoad('')
       setReps('')
-      console.log('new workout added', json)
-      //fetchWorkout()
+      console.log('new workout added', addedWorkout)
+      setWorkouts([...workouts, addedWorkout])
     }
 
   }

@@ -28,7 +28,12 @@ function Home() {
 
       {workouts && workouts.length > 0 ? (
           workouts.map((workout) => (
-            <WorkoutDetails key={workout._id} workout={workout} />
+            <WorkoutDetails 
+            key={workout._id} 
+            workout={workout}
+            workouts={workouts}
+            setWorkouts={setWorkouts}
+             />
           ))
         ) : (
           <p className={style['no-workout-mssg']}>No workouts added yet</p>
@@ -36,7 +41,11 @@ function Home() {
       </div>
 
       <div className={style['homepage-right-section']}>
-        <WorkoutForm />
+        <WorkoutForm 
+         workouts={workouts}
+         setWorkouts={setWorkouts}
+        />
+      
       </div>
       
     </div>
