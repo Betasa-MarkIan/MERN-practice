@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import Header from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
 import WorkoutPlans from './pages/WorkoutPlans.jsx'
+import Shoulder from './exercises/Shoulder.jsx'
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
 
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/exercise-list" element={<ExerciseList />} /> */}
+          <Route path="/exercises/Shoulder" element={<Shoulder />}/>
           <Route path="/workout-plans" element={<WorkoutPlans />} />
           
 

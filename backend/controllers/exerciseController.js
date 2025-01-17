@@ -24,7 +24,7 @@ try {
   res.status(200).json(exercise)
 }
 catch (error) {
-  return req.status(400).json({ error: error.message })
+  return res.status(400).json({ error: error.message })
 }}
 
 

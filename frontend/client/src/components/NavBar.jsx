@@ -20,18 +20,13 @@ function Header () {
         <div className={style['exercise-subheading']}>
           <p className={style['drop-text']}>Exercise List</p>
           <div className={style['dropdown-content']}>
-            <Link to="#" className='#'>Shoulder</Link>
-            <Link to="#" className='#'>Chest</Link>
-            <Link to="#" className='#'>Back/Wing</Link>
-            <Link to="#" className='#'>Biceps</Link>
-            <Link to="#" className='#'>Triceps</Link>
-            <Link to="#" className='#'>Forearm</Link>
-            <Link to="#" className='#'>Abs/Core</Link>
-            <Link to="#" className='#'>Leg</Link>
-            <Link to="#" className='#'>Calf</Link>
-            <Link to="#" className='#'>Hips</Link>
-            <Link to="#" className='#'>Cardio</Link>
-            <Link to="#" className='#'>Full body</Link>
+            <Link to="../ExerciseTypes/Shoulder" className='#'>Shoulder</Link>
+            <Link to="../ExerciseTypes/Chest" className='#'>Chest</Link>
+            <Link to="../ExerciseTypes/BackWing" className='#'>Back/Wing</Link>
+            <Link to="../ExerciseTypes/Biceps" className='#'>Biceps</Link>
+            <Link to="../ExerciseTypes/Triceps" className='#'>Triceps</Link>
+            <Link to="../ExerciseTypes/Forearm" className='#'>Forearm</Link>
+            <Link to="../ExerciseTypes/AbsCore" className='#'>Abs/Core</Link>
             
           </div>
          

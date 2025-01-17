@@ -1,0 +1,25 @@
+.edit-form {
+  width: 300px;
+}
+.save-icon-on-edit, .cancel-icon-on-edit {
+  width: 100px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cancel-icon-on-edit {
+  margin-right: 10px;
+}
+.save-icon-on-edit {
+  color: white;
+  background-color: var(--primary);
+}
+.save-icon-on-edit:hover {
+  color: white;
+  background-color: var(--secondary);
+}
+.cancel-icon-on-edit:hover {
+  color: white;
+  background-color: var(--error);
+}

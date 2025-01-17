@@ -11,6 +11,8 @@
   align-items: center;
   flex-direction: row;
   gap: 20px;
+  width: 100vw;
+  margin: 0px;
 } 
 .title01, .title02 {
   display: inline-block;
@@ -31,6 +33,7 @@
   font-size: 30px;
   margin-right: 20px;
 }
+
 /* .title-section {
   border: 1px solid #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -120,7 +123,6 @@
   left: 0; /* Align with the left edge of the subheading */
 }
 
-.dropdown-content:hover + .drop-text:hover {
 
-}
+
 

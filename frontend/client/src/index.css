@@ -4,13 +4,14 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0px;
+  padding-right: 0px;
   padding-bottom: 500px; 
   /* long bottom padding */
 }
 :root {
   --primary: #1aac83;
   --secondary: #2896bd;
-  --error: #e7195a;
+  --error: #ff2c2c;
 }
 a {
   all: unset;
