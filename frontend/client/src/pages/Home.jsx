@@ -26,23 +26,24 @@ function Home() {
 
   return (
     <div className={style['homepage']}>
-      {/* Left Section: List of Workouts */}
       <div className={style['homepage-left-section']}>
         {workouts && workouts.length > 0 ? (
-          workouts.map((workout) => (
-            <WorkoutDetails
-              key={workout._id}
-              workout={workout}
-              workouts={workouts}
-              setWorkouts={setWorkouts} // Pass the setter for direct updates
-            />
-          ))
+          workouts.map((workout) => {
+            const currentWorkout = workouts.find((w) => w._id === workout._id);
+            return (
+              <WorkoutDetails
+                key={workout._id}
+                workout={currentWorkout}
+                workouts={workouts}
+                setWorkouts={setWorkouts} // Pass the setter for direct updates
+              />
+            );
+          })
         ) : (
           <p className={style['no-workout-mssg']}>No workouts added yet</p>
         )}
       </div>
-
-      {/* Right Section: Add New Workout Form */}
+  
       <div className={style['homepage-right-section']}>
         <WorkoutForm workouts={workouts} setWorkouts={setWorkouts} />
       </div>

@@ -1,13 +1,14 @@
-import style from './Exercise.module.css'
+import React from 'react';
+import ExercisePage from './ExercisePage';
 
-function Shoulder() {
+const Shoulder = () => {
+  return (
+    <ExercisePage
+      title="Shoulder"
+      subtitle="Primary exercises"
+      endpoint="http://localhost:4000/api/exercises/shoulder"
+    />
+  );
+};
 
-  return(
-    <div className={style['exercises-layout']}>
-      exercise layout
-    </div>
-  )
-
-}
-
-export default Shoulder
+export default Shoulder;

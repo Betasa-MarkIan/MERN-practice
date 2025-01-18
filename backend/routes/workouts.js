@@ -7,7 +7,6 @@ const {
   createWorkout,
   deleteWorkout,
   patchWorkout
-  //add get exercise later
 } = require('../controllers/workoutController')
 
 // GET all workouts

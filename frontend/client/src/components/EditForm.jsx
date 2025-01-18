@@ -8,10 +8,9 @@ function EditForm({ workout, setWorkouts, onCancel }) {
   const [error, setError] = useState(null);
 
   const handleSave = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
 
     try {
-      // Send PATCH request to update workout
       const response = await fetch(`http://localhost:4000/api/workouts/update/${workout._id}`, {
         method: 'PATCH',
         headers: {
@@ -25,15 +24,15 @@ function EditForm({ workout, setWorkouts, onCancel }) {
       if (response.ok) {
         console.log('Workout updated successfully', updatedWorkout);
 
-        // Update the workouts list in the parent component
         setWorkouts((prevWorkouts) =>
-          prevWorkouts.map((w) =>
-            w._id === updatedWorkout._id ? updatedWorkout : w
+          prevWorkouts.map((workout) =>
+            workout._id === updatedWorkout._id ? updatedWorkout : workout
           )
         );
+        location.reload()
+        console.log('updated workout list', updatedWorkout)
+        onCancel()
 
-        // Call the cancel function to close the edit form
-        onCancel();
       } else {
         setError(updatedWorkout.error || 'Failed to update the workout');
       }
@@ -67,7 +66,6 @@ function EditForm({ workout, setWorkouts, onCancel }) {
         required
       />
 
-      {/* Cancel button to close the form */}
       <button
         type="button"
         className={style['cancel-icon-on-edit']}
@@ -76,12 +74,10 @@ function EditForm({ workout, setWorkouts, onCancel }) {
         Cancel
       </button>
 
-      {/* Save button to trigger the onSubmit */}
       <button type="submit" className={style['save-icon-on-edit']}>
         Save
       </button>
 
-      {/* Display error if any */}
       {error && <div className={style['error']}>{error}</div>}
     </form>
   );

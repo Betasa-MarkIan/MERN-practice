@@ -20,17 +20,10 @@ const exerciseSchema = mongoose.Schema({
       'shoulder',
       'chest',
       'back-wing',
-      'biceps',
-      'triceps',
       'forearm',
       'abs-core',
-      'leg',
-      'calf',
-      'hips',
-      'cardio',
-      'fullbody'
     ]
-  }
+  },
 })
 
 

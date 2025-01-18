@@ -18,7 +18,7 @@
 
 .exercises-header p {
   font-size: 20px;
-  margin: 0px;
+  margin: 0px 0px 0px 20px;
   letter-spacing: 10px;
 }
 .exercises-header {
@@ -29,6 +29,7 @@
 .exercises-box {
   padding-bottom: 200px;
 }
+
 .exercise-details {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -39,10 +40,14 @@
   height: 150px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .exercise-details h4 {
   margin: 0 0 20px 0;
-  font-size: 40px;
+  font-size: 60px;
+  letter-spacing: 5px;
   color: var(--primary);
 }
 .exercise-details p {
@@ -50,40 +55,4 @@
   font-size: 15px;
   color: #555;
 }
-.exercise-text {
-  flex: 3;
-}
-.exercise-function {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
-.exercise-add-button button {
-  all: unset;
-}
-.exercise-add-button {
-  background-color: var(--primary);
-  border-radius: 30px;
-  color: white;
-  width: 120px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.exercise-add-button:hover {
-  background-color: var(--secondary);
-}
 
-
-/* .exercises-box {
-  border: 1px solid black;
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: center; 
-} */

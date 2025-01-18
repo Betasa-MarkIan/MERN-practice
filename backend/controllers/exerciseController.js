@@ -1,14 +1,25 @@
 const Exercise = require('../models/exerciseModels')
 const mongoose = require('mongoose')
 
+// GET all exercises
+const getAllExercise = async (req, res) => {
+  try {
+    const exercise = await Exercise.find({})
+    res.status(200).json(exercise)
+  }
+  catch (error) {
+    res.status(400).json({error: error.message})
+  }
+}
+
 // GET exercises by category
 
 const getExerciseByCategory = async (req, res) => {
   const { category } = req.params
 
   try {
-    const exercises = await Exercise.find({ category }) 
-      return res.status(200).json(exercises)
+    const exercise = await Exercise.find({ category }) 
+      return res.status(200).json(exercise)
       }
   catch (error) {
       return res.status(500).json({ error: error.message });
@@ -26,7 +37,6 @@ try {
 catch (error) {
   return res.status(400).json({ error: error.message })
 }}
-
 
 // DELETE exercises by category
 const deleteExerciseByCategory = async (req, res) => {
@@ -49,8 +59,23 @@ const deleteExerciseByCategory = async (req, res) => {
     return res.status(404).json({error: error.message})
   }}
 
+const deleteAllExerciseByCategory = async (req, res) => {
+  try {
+    const exercise =  await Exercise.deleteMany({})
+    if(!exercise) {
+      return res.status(404).json({error: 'No such exercise found'})
+    } else {
+      return res.status(200).json({message: 'Exercises deleted successfully', exercise})
+    }
+  } catch (error) {
+    return res.status(404).json({error: error.message})
+  }
+}
+
 module.exports = {
+  getAllExercise,
   getExerciseByCategory,
   addExerciseByCategory,
-  deleteExerciseByCategory
+  deleteExerciseByCategory,
+  deleteAllExerciseByCategory
 }
