@@ -4,7 +4,7 @@ import WorkoutForm from '../components/WorkoutForm.jsx';
 import style from './Home.module.css';
 
 function Home() {
-  const [workouts, setWorkouts] = useState(null);
+  const [workouts, setWorkouts] = useState(null)
 
   // Fetch workouts when the component mounts
   const fetchWorkouts = async () => {

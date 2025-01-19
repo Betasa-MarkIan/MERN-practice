@@ -9,14 +9,6 @@ const exerciseSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  reps: {
-    type: Number,
-    required: true
-  },
-  load: {
-    type: Number,
-    required: true
-  },
   description: {
     type: String,
     required: true

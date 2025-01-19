@@ -1,7 +1,7 @@
-import style from './WorkoutForm.module.css'
+import style from '../components/WorkoutForm.module.css'
 import { useState } from 'react'
 
-function WorkoutForm({ workouts, setWorkouts }) {
+function WorkoutPlanForm({ workoutPlans, setWorkoutPlans, category }) {
 
   const [title, setTitle]  = useState('')
   const [load, setLoad]   = useState('')
@@ -12,19 +12,20 @@ function WorkoutForm({ workouts, setWorkouts }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const workout = {title, load, reps}
-    const response = await fetch('http://localhost:4000/api/workouts/post', {
+    const workoutPlan = {title, load, reps, category}
+    const response = await fetch('http://localhost:4000/api/workoutplans/post', {
+    
       method: 'POST',
-      body: JSON.stringify(workout),
+      body: JSON.stringify(workoutPlan),
       headers: {
         'Content-Type': 'application/json'
       }
     })
 
-    const addedWorkout = await response.json()
+    const addedWorkoutPlan = await response.json()
 
     if(!response.ok) {
-      setError(addedWorkout.error)
+      setError(addedWorkoutPlan.error)
 
       setTimeout(() => {
         setError(null)
@@ -35,8 +36,8 @@ function WorkoutForm({ workouts, setWorkouts }) {
       setTitle('')
       setLoad('')
       setReps('')
-      console.log('new workout added', addedWorkout)
-      setWorkouts([addedWorkout,...workouts])
+      console.log('new workout added', addedWorkoutPlan)
+      setWorkoutPlans([addedWorkoutPlan,...workoutPlans])
 
       setMessage('New workout added')
 
@@ -80,7 +81,6 @@ function WorkoutForm({ workouts, setWorkouts }) {
     </div>
    
   )
-  
 }
 
-export default WorkoutForm
+export default WorkoutPlanForm

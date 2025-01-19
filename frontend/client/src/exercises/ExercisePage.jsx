@@ -19,7 +19,6 @@ const ExercisePage = ({ title, subtitle, endpoint }) => {
         {exercises && exercises.length > 0 ? (
           exercises.map((exercise) => (
             <ExerciseDetails
-              key={exercise._id}
               exercise={exercise}
             />
           ))

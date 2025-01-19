@@ -11,7 +11,7 @@ require('dotenv').config()
 const app = express()
 const workoutRoutes = require('./routes/workouts')
 const exerciseRoutes = require('./routes/exercises')
-const workoutPlanRoutes = require('./routes/workoutplan')
+const workoutPlanRoutes = require('./routes/workoutplans')
 
 //global middleware
 app.use(express.json())
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/exercises', exerciseRoutes)
-app.use('/api/workoutplan', workoutPlanRoutes)
+app.use('/api/workoutplans', workoutPlanRoutes)
 
 
 // Connect to db - async 

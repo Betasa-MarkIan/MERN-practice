@@ -1,7 +1,6 @@
 
 .workout-container {
   display: flex;
-
 }
 .workout-container {
   background: #fff;
@@ -43,4 +42,22 @@
 }
 .edit-icon {
   margin-right: 8px;
+}
+
+.message-prompt, .error-prompt {
+  position: fixed; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 1000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white; 
+  border-radius: 8px; 
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  overflow: visible; 
 }

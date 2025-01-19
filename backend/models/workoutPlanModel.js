@@ -5,10 +5,6 @@ const workoutPlanSchema = mongoose.Schema({
     type: String,
     required: true 
   },
-  equipment: {
-    type: String,
-    required: true
-  },
   load: {
     type: Number,
     required: true

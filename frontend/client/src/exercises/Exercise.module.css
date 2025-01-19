@@ -5,6 +5,8 @@
 .exercises-header,
 .exercises-box {
   padding: 30px 200px;
+}
+.exercises-header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05),
   0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -78,12 +80,20 @@
 .exercise-add-button:hover {
   background-color: var(--secondary);
 }
-
-
-/* .exercises-box {
-  border: 1px solid black;
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: center; 
-} */
+.message-prompt, .error-prompt {
+  position: fixed; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 1000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white; 
+  border-radius: 8px; 
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  overflow: visible; 
+}

@@ -35,7 +35,7 @@ function Header () {
 
       {/* for the account icon */}
       <div className={style['account-section']}>
-        account
+        
       </div>
     
     </div>

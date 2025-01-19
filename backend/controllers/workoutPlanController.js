@@ -19,7 +19,7 @@ const getMyWorkoutByCategory = async (req, res) => {
 
   try {
     const workoutplan = await WorkoutPlan.find({ category }) 
-      return res.status(200).json(exercise)
+      return res.status(200).json(workoutplan)
       }
   catch (error) {
       return res.status(500).json({ error: error.message });
@@ -85,7 +85,32 @@ const deleteAllMyWorkout = async (req, res) => {
   } catch (error) {
       return res.status(404).json({error: error.message})
   } 
+}
 
+// UPDATE a workout
+const patchMyWorkout = async (req, res) => {
+  const { id } = req.params
+
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(404).json({error: 'No such workout found with this id'})
+    }
+
+    const workoutplan =  await WorkoutPlan.findOneAndUpdate(
+      { _id: id}, 
+      { ...req.body }, //fields to update
+      { new: true } //return the new values
+    )
+
+    if(!workoutplan) {
+      return res.status(404).json({error: 'No such workout found'})
+    } else {
+      return res.status(200).json({message: 'Workout updated successfully', workoutplan})
+    }
+
+  } catch (error){
+    return res.status(404).json({error: error.message})
+  }
 }
 
 module.exports = {
@@ -94,5 +119,6 @@ module.exports = {
   addMyWorkout, 
   deleteMyWorkoutById, 
   deleteMyWorkoutByCategory, 
-  deleteAllMyWorkout
+  deleteAllMyWorkout,
+  patchMyWorkout
 }

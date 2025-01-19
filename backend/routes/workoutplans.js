@@ -1,7 +1,7 @@
 
 const express = require('express')
 const router = express.Router()
-const { getAllMyWorkout, getMyWorkoutByCategory, addMyWorkout, deleteMyWorkoutById, deleteMyWorkoutByCategory, deleteAllMyWorkout} = require('../controllers/workoutPlanController')
+const { getAllMyWorkout, getMyWorkoutByCategory, addMyWorkout, deleteMyWorkoutById, deleteMyWorkoutByCategory, deleteAllMyWorkout, patchMyWorkout} = require('../controllers/workoutPlanController')
 
 //get all myWorkout
 router.get('/', getAllMyWorkout)
@@ -20,5 +20,8 @@ router.delete('/delete/:category', deleteMyWorkoutByCategory)
 
 //delete ALL myWorkout
 router.delete('/delete', deleteAllMyWorkout)
+
+// UPDATE a workout
+router.patch('/update/:id', patchMyWorkout)
 
 module.exports = router

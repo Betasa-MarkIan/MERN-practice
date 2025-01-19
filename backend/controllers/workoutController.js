@@ -73,7 +73,6 @@ const deleteWorkout = async (req, res) => {
 // UPDATE a workout
 const patchWorkout = async (req, res) => {
   const { id } = req.params
-  const { title, load, reps } = req.body
 
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -97,7 +96,6 @@ const patchWorkout = async (req, res) => {
   }
 }
 
-//other functions will be added later
 
 module.exports = {
   createWorkout,
