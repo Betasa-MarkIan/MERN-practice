@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const exerciseSchema = mongoose.Schema({
+const workoutPlanSchema = mongoose.Schema({
   title: {
     type: String,
     required: true 
@@ -9,30 +9,27 @@ const exerciseSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  reps: {
-    type: Number,
-    required: true
-  },
   load: {
     type: Number,
     required: true
   },
-  description: {
-    type: String,
+  reps: {
+    type: Number,
     required: true
   },
   category: {
     type: String,
     required: true,
     enum: [
-      'shoulder',
-      'chest',
-      'back-wing',
-      'forearm',
-      'abs-core',
+      'monday',
+      'tuesday',
+      'wednesday',
+      'thursday',
+      'friday',
+      'saturday',
+      'sunday'
     ]
-  },
-})
+  }
+}, { timestamps: true })
 
-
-module.exports = mongoose.model('Exercise', exerciseSchema)
+module.exports = mongoose.model('WorkoutPlan', workoutPlanSchema)

@@ -44,6 +44,9 @@
   align-items: center;
   justify-content: center;
 }
+.exercise-details:hover {
+  cursor: pointer;
+}
 .exercise-details h4 {
   margin: 0 0 20px 0;
   font-size: 60px;
@@ -54,5 +57,20 @@
   margin: 5px 0 5px 0;
   font-size: 15px;
   color: #555;
+}
+.centered-link {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.centered-link h4 {
+  margin: 0 0 20px 0;
+  justify-content: center;
+}
+.centered-link p {
+  margin: 5px 0 5px 0;
 }
 

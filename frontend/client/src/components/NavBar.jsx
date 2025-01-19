@@ -27,12 +27,9 @@ function Header () {
             <Link to="../exercises/AbsCore" className='#'>Abs/Core</Link>
             
           </div>
-         
         </div>
 
-
-
-        <div className={style['workout-plans-subheading']}><Link to="/workout-plans">Workout plans
+        <div className={style['workout-plans-subheading']}><Link to="/workoutplans">Workout Plans
         </Link></div>
       </div>
 

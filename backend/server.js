@@ -11,13 +11,7 @@ require('dotenv').config()
 const app = express()
 const workoutRoutes = require('./routes/workouts')
 const exerciseRoutes = require('./routes/exercises')
-const mondayRoutes = require('./routes/monday')
-const tuesdayRoutes = require('./routes/tuesday')
-const wednesdayRoutes = require('./routes/wednesday')
-const thursdayRoutes = require('./routes/thursday')
-const fridayRoutes = require('./routes/friday')
-const saturdayRoutes = require('./routes/sunday')
-const sundayRoutes = require('./routes/sunday')
+const workoutPlanRoutes = require('./routes/workoutplan')
 
 //global middleware
 app.use(express.json())
@@ -30,13 +24,8 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/exercises', exerciseRoutes)
-app.use('api/monday', mondayRoutes)
-app.use('api/tuesday', tuesdayRoutes)
-app.use('api/wednesday', wednesdayRoutes)
-app.use('api/thursday', thursdayRoutes)
-app.use('api/friday', fridayRoutes)
-app.use('api/saturday', saturdayRoutes)
-app.use('api/sunday', sundayRoutes)
+app.use('/api/workoutplan', workoutPlanRoutes)
+
 
 // Connect to db - async 
 mongoose.connect(process.env.MONGO_URI)
