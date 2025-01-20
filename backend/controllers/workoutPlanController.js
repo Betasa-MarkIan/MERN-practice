@@ -64,10 +64,12 @@ const deleteMyWorkoutByCategory = async (req, res) => {
   const { category } = req.params
   try {
     const workoutplan =  await WorkoutPlan.deleteMany({ category })
-    if(!workoutplan) {
+    if(workoutplan.deletedCount === 0 ) {
       return res.status(404).json({error: 'No such workout category found'})
     } else {
-      return res.status(200).json({message: 'Workout category deleted successfully', workoutplan})
+      return res.status(200).json({
+        message: 'Workout category deleted successfully',
+        deletedCount: workoutplan.deletedCount})
     }
   } catch (error) {
     return res.status(404).json({error: error.message})

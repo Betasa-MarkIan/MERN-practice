@@ -16,7 +16,7 @@ router.post('/post', addMyWorkout)
 router.delete('/delete/:id', deleteMyWorkoutById)
 
 //delete ALL myWorkout by category
-router.delete('/delete/:category', deleteMyWorkoutByCategory)
+router.delete('/delete/category/:category', deleteMyWorkoutByCategory)
 
 //delete ALL myWorkout
 router.delete('/delete', deleteAllMyWorkout)
