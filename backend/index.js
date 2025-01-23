@@ -64,7 +64,7 @@
   //     process.exit(1)
   //   })
 
-  const express = require('express')
+const express = require('express')
 const moongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
@@ -98,9 +98,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-
-const PORT = 4000
-
+const PORT = 5000
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
 })
