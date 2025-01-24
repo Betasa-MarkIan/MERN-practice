@@ -11,7 +11,7 @@ function EditFormPlan({ workoutPlan, setWorkoutPlans, onCancel }) {
     e.preventDefault(); 
 
     try {
-      const response = await fetch(`http://localhost:4000/api/workoutplans/update/${workoutPlan._id}`, {
+      const response = await fetch(`api/workoutplans/update/${workoutPlan._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

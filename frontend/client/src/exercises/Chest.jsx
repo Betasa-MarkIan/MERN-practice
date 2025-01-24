@@ -6,7 +6,7 @@ const Chest = () => {
     <ExercisePage
       title="Chest"
       subtitle="Primary exercises"
-      endpoint="http://localhost:4000/api/exercises/chest"
+      endpoint="api/exercises/chest"
     />
   );
 };

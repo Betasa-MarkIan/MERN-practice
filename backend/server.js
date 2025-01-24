@@ -17,7 +17,7 @@ const workoutPlanRoutes = require('./routes/workoutplans')
 
 //global middleware
 app.use(express.json())
-app.use(cors({origin: 'http://localhost:5173'}))
+app.use(cors());
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
@@ -31,15 +31,26 @@ app.use('/api/workoutplans', workoutPlanRoutes)
 
 
 //Connect to db - async 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {  
+  useNewUrlParser: true, 
+  useUnifiedTopology: true })
   .then(() => {
-    // listen for request
     app.listen(process.env.PORT, () => { 
     console.log('connected to db...')
-    console.log('listening on port 4000')
+    console.log('listening on port 5000')
    })
   })
   .catch((error) => {
     console.log(error)
   })
+
+const path = require("path");
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "dist"))); // Adjust path if necessary
+
+// Catch-all handler to serve React's index.html for unmatched routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
 

@@ -13,7 +13,7 @@ const WorkoutPlanPage = ({ category }) => {
   
     const fetchWorkoutPlans = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/workoutplans/${category}`);
+        const response = await fetch(`api/workoutplans/${category}`);
         const json = await response.json();
   
         if (response.ok) {
@@ -45,7 +45,7 @@ const WorkoutPlanPage = ({ category }) => {
     const handleConfirm = async (category) => {
       setShowPrompt(true)
 
-      const response = await fetch(`http://localhost:4000/api/workoutplans/delete/category/${category}`, {
+      const response = await fetch(`api/workoutplans/delete/category/${category}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

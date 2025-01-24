@@ -14,7 +14,7 @@ function WorkoutDetails({ workout, workouts, setWorkouts}) {
   })
 
   const handleDelete = async (id) => {
-      const response = await fetch(`http://localhost:4000/api/workouts/delete/${id}`, {
+      const response = await fetch(`api/workouts/delete/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

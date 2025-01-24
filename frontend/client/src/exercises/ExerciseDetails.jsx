@@ -17,7 +17,7 @@ function ExerciseDetails ({ exercise }) {
     const workout = { title, load, reps }
 
     try {
-      const response = await fetch('http://localhost:4000/api/workouts/post', {
+      const response = await fetch('api/workouts/post', {
         method: 'POST',
         body: JSON.stringify(workout),
         headers: {

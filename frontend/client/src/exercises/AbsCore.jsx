@@ -6,7 +6,7 @@ const AbsCore = () => {
     <ExercisePage
       title="Abs & Core"
       subtitle="Primary exercises"
-      endpoint="http://localhost:4000/api/exercises/abs-core"
+      endpoint="api/exercises/abs-core"
     />
   );
 };

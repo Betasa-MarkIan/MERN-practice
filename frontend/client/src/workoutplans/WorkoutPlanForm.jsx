@@ -13,7 +13,7 @@ function WorkoutPlanForm({ workoutPlans, setWorkoutPlans, category }) {
     e.preventDefault()
 
     const workoutPlan = {title, load, reps, category}
-    const response = await fetch('http://localhost:4000/api/workoutplans/post', {
+    const response = await fetch('api/workoutplans/post', {
     
       method: 'POST',
       body: JSON.stringify(workoutPlan),

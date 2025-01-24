@@ -11,8 +11,9 @@ function EditForm({ workout, setWorkouts, onCancel }) {
   const handleSave = async (e) => {
     e.preventDefault(); 
 
+    //http://localhost:5000/ localhost testing
     try {
-      const response = await fetch(`http://localhost:4000/api/workouts/update/${workout._id}`, {
+      const response = await fetch(`api/workouts/update/${workout._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

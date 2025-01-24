@@ -6,7 +6,7 @@ const BackWing = () => {
     <ExercisePage
       title="Back & Wing"
       subtitle="Primary exercises"
-      endpoint="http://localhost:4000/api/exercises/back-wing"
+      endpoint="api/exercises/back-wing"
     />
   );
 };
